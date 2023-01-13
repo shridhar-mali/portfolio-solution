@@ -1,4 +1,4 @@
-package repository;
+package com.example.geektrust.repository;
 
 import com.example.geektrust.model.Fund;
 import com.example.geektrust.model.Funds;

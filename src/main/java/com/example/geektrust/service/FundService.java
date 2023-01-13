@@ -3,7 +3,7 @@ package com.example.geektrust.service;
 import com.example.geektrust.model.Fund;
 import com.example.geektrust.model.Funds;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import repository.FundRepository;
+import com.example.geektrust.repository.FundRepository;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,10 +44,12 @@ public class FundService {
         Set<String> commonStocks = new HashSet<>(fund.getStocks());
         commonStocks.retainAll(newFund.getStocks());
 
-        System.out.println(String.format(overlapStocksOutputFormat,
-                newFund.getName(),
-                fund.getName(),
-                calculateOverlapPercentage(newFund.getStocks().size(), fund.getStocks().size(), commonStocks.size())));
+        if(commonStocks.size() > 0) {
+            System.out.println(String.format(overlapStocksOutputFormat,
+                    newFund.getName(),
+                    fund.getName(),
+                    calculateOverlapPercentage(newFund.getStocks().size(), fund.getStocks().size(), commonStocks.size())));
+        }
     }
 
     public String calculateOverlapPercentage(long newFundStocks, long existingFundStocks, long commonStocks) {

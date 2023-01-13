@@ -7,7 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import repository.FundRepository;
+import com.example.geektrust.repository.FundRepository;
 
 import java.util.Arrays;
 
